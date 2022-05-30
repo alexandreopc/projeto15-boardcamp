@@ -11,13 +11,13 @@ export async function getCategories(req, res) {
 }
 
 export async function createCategorie(req, res) {
-  const newCategorie = req.body
+  const { name } = req.body
   try {
     const result = await db.query(
       `
         INSERT INTO categories (name) VALUES ($1);
       `,
-      [req.body.name]
+      [name]
     )
 
     res.sendStatus(201)

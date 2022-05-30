@@ -4,7 +4,7 @@ import {
   getCategories,
   createCategorie,
 } from "./../controllers/categoriesController.js"
-import { validateCategory } from "./../middlewares/categoriesValidator.js"
+import { validateCategory } from "./../middlewares/categoriesMiddleware.js"
 
 const categoriesRouter = Router()
 

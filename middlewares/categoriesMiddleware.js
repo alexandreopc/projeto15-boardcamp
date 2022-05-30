@@ -3,10 +3,11 @@ import joi from "joi"
 import db from "../db.js"
 
 export async function validateCategory(req, res, next) {
-  const categorieSchema = joi.object({
+  const categorySchema = joi.object({
     name: joi.string().required(),
   })
-  const validation = categorieSchema.validate(req.body)
+
+  const validation = categorySchema.validate(req.body)
   if (validation.error) {
     return res.status(400).send(validation.error.details)
   }
